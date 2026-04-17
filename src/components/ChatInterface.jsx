@@ -19,7 +19,7 @@ export const ChatInterface = ({ userId, pdf }) => {
       console.log('ChatInterface: No PDF text available');
       setPdfText('');
     }
-  }, [pdf]);
+  }, [pdf, setPdfText]);
 
   const handleSend = async (e) => {
     e.preventDefault();
