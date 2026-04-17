@@ -16,12 +16,10 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Using Together AI API (free tier available)
     const togetherApiUrl = 'https://api.together.xyz/inference';
-
     const prompt = `${systemPrompt}\n\nUser: ${userMessage}\n\nAssistant:`;
 
-    console.log('Calling Together AI API from Vercel...');
+    console.log('Calling Together AI Mistral API...');
 
     const response = await fetch(togetherApiUrl, {
       method: 'POST',
@@ -38,36 +36,32 @@ export default async function handler(req, res) {
       })
     });
 
-    console.log('API response status:', response.status);
+    console.log('Together AI response status:', response.status);
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error('API error:', errorText);
-      // Return mock response for demo purposes
-      return res.status(200).json({
-        success: true,
-        message: `[Demo Response] I received your question: "${userMessage}". In a production environment, I would use a properly configured API key to call Mistral or another LLM to generate a response based on the PDF content and your query.`,
-        demo: true
+      console.error('Together AI error:', errorText);
+      return res.status(response.status).json({
+        error: `API error: ${response.status}`,
+        details: errorText
       });
     }
 
     const result = await response.json();
-    console.log('API result:', result);
+    console.log('Together AI result:', result);
 
-    const responseText = result.output?.choices?.[0]?.text || result.text || '';
+    const responseText = result.output?.[0] || '';
+    const finalMessage = responseText.replace(prompt, '').trim();
 
     return res.status(200).json({
       success: true,
-      message: responseText.replace(prompt, '').trim() || 'No response generated'
+      message: finalMessage || 'No response generated'
     });
   } catch (error) {
     console.error('Error in chat handler:', error.message);
-    // Return demo response on error
-    return res.status(200).json({
-      success: true,
-      message: `[Demo Response] The backend API encountered an error but the serverless function is working. To use a real LLM, configure the HUGGINGFACE_API_KEY environment variable with a valid API key from a supported service (Hugging Face, Together AI, etc.).`,
-      demo: true,
-      error_details: error.message
+    return res.status(500).json({
+      success: false,
+      error: error.message
     });
   }
 }
