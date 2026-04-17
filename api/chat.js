@@ -5,13 +5,6 @@ export default async function handler(req, res) {
 
   const { userMessage, systemPrompt, pdfContent } = req.body;
 
-  console.log('API received request:', {
-    hasUserMessage: !!userMessage,
-    hasSystemPrompt: !!systemPrompt,
-    pdfContentLength: pdfContent?.length || 0,
-    pdfContentPreview: pdfContent?.substring(0, 200) || 'empty',
-  });
-
   if (!userMessage) {
     return res.status(400).json({ error: 'userMessage is required' });
   }

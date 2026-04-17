@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { callMistralAPI } from '../services/huggingface';
 
 export const useChat = (userId, pdfId) => {
@@ -6,10 +6,6 @@ export const useChat = (userId, pdfId) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [pdfContent, setPdfContent] = useState('');
-
-  useEffect(() => {
-    console.log('useChat: pdfContent updated, length:', pdfContent.length);
-  }, [pdfContent]);
 
   const sendMessage = async (userMessage) => {
     if (!userMessage.trim()) return;
@@ -21,9 +17,6 @@ export const useChat = (userId, pdfId) => {
       const userMsg = { id: Date.now(), role: 'user', content: userMessage };
       setMessages(prev => [...prev, userMsg]);
 
-      console.log('Calling Groq API with PDF context...');
-      console.log('PDF Content length:', pdfContent.length, 'chars');
-      console.log('PDF Content preview:', pdfContent.substring(0, 200));
       const systemPrompt = `Tu es un assistant intelligent qui répond à des questions sur des documents PDF.
 Utilise le contexte du document fourni pour répondre précisément et concisément.
 Sois utile et clair dans tes réponses.`;
