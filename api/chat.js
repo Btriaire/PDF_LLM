@@ -9,7 +9,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'userMessage is required' });
   }
 
-  const hfApiUrl = 'https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2';
+  const hfApiUrl = 'https://api-inference.huggingface.co/models/gpt2';
   const apiKey = process.env.HUGGINGFACE_API_KEY;
 
   if (!apiKey) {
