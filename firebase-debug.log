@@ -1,0 +1,285 @@
+[debug] [2026-04-17T19:39:23.459Z] ----------------------------------------------------------------------
+[debug] [2026-04-17T19:39:23.461Z] Command:       /opt/homebrew/Cellar/node/25.8.0/bin/node /opt/homebrew/bin/firebase emulators:start --only functions
+[debug] [2026-04-17T19:39:23.461Z] CLI Version:   15.15.0
+[debug] [2026-04-17T19:39:23.461Z] Platform:      darwin
+[debug] [2026-04-17T19:39:23.461Z] Node Version:  v25.8.0
+[debug] [2026-04-17T19:39:23.461Z] Time:          Fri Apr 17 2026 21:39:23 GMT+0200 (Central European Summer Time)
+[debug] [2026-04-17T19:39:23.461Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-04-17T19:39:24.114Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-04-17T19:39:24.114Z] > authorizing via signed-in user (bruno.triaire@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2026-04-17T19:39:24.236Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-04-17T19:39:24.236Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2026-04-17T19:39:24.238Z] Write emulator hub locator at /var/folders/tv/1jx52jjj72326lrmw8nz0k5m0000gn/T/hub-auradoc-f869a.json
+[debug] [2026-04-17T19:39:24.349Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-04-17T19:39:24.349Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-04-17T19:39:24.349Z] [tasks] Cloud Tasks Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-04-17T19:39:24.349Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}],"tasks":[{"address":"127.0.0.1","family":"IPv4","port":9499}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: apphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: apphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect"}}
+[debug] [2026-04-17T19:39:24.468Z] defaultcredentials: writing to file /Users/brunotriaire/.config/firebase/bruno_triaire_gmail.com_application_default_credentials.json
+[debug] [2026-04-17T19:39:24.469Z] Setting GAC to /Users/brunotriaire/.config/firebase/bruno_triaire_gmail.com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/brunotriaire/.config/firebase/bruno_triaire_gmail.com_application_default_credentials.json"}}
+[debug] [2026-04-17T19:39:24.470Z] Checked if tokens are valid: true, expires at: 1776458333886
+[debug] [2026-04-17T19:39:24.470Z] Checked if tokens are valid: true, expires at: 1776458333886
+[debug] [2026-04-17T19:39:24.471Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/auradoc-f869a/adminSdkConfig [none]
+[debug] [2026-04-17T19:39:24.796Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/auradoc-f869a/adminSdkConfig 200
+[debug] [2026-04-17T19:39:24.796Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/auradoc-f869a/adminSdkConfig {"projectId":"auradoc-f869a","storageBucket":"auradoc-f869a.firebasestorage.app"}
+[info] i  ui: downloading ui-v1.15.0.zip... {"metadata":{"emulator":{"name":"ui"},"message":"downloading ui-v1.15.0.zip..."}}
+[debug] [2026-04-17T19:39:24.813Z] >>> [apiv2][query] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.15.0.zip 
+[debug] [2026-04-17T19:39:24.915Z] <<< [apiv2][status] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.15.0.zip 200
+[debug] [2026-04-17T19:39:24.915Z] <<< [apiv2][body] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.15.0.zip [stream]
+[debug] [2026-04-17T19:39:28.219Z] Data is 3538469
+[debug] [2026-04-17T19:39:28.219Z] [unzip] Entry: client/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2026-04-17T19:39:28.219Z] [unzip] Processing entry: client/
+[debug] [2026-04-17T19:39:28.219Z] [unzip] mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/
+[debug] [2026-04-17T19:39:28.220Z] [unzip] Entry: client/favicon-16x16.png (compressed_size=293 bytes, uncompressed_size=293 bytes)
+[debug] [2026-04-17T19:39:28.220Z] [unzip] Processing entry: client/favicon-16x16.png
+[debug] [2026-04-17T19:39:28.220Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-04-17T19:39:28.220Z] [unzip] Writing file: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/favicon-16x16.png
+[debug] [2026-04-17T19:39:28.221Z] [unzip] Entry: client/safari-pinned-tab.svg (compressed_size=1433 bytes, uncompressed_size=2611 bytes)
+[debug] [2026-04-17T19:39:28.221Z] [unzip] Processing entry: client/safari-pinned-tab.svg
+[debug] [2026-04-17T19:39:28.221Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-04-17T19:39:28.221Z] [unzip] deflating: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/safari-pinned-tab.svg
+[debug] [2026-04-17T19:39:28.223Z] [unzip] Entry: client/favicon.ico (compressed_size=2933 bytes, uncompressed_size=13294 bytes)
+[debug] [2026-04-17T19:39:28.223Z] [unzip] Processing entry: client/favicon.ico
+[debug] [2026-04-17T19:39:28.223Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-04-17T19:39:28.223Z] [unzip] deflating: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/favicon.ico
+[debug] [2026-04-17T19:39:28.224Z] [unzip] Entry: client/index.html (compressed_size=1364 bytes, uncompressed_size=3071 bytes)
+[debug] [2026-04-17T19:39:28.224Z] [unzip] Processing entry: client/index.html
+[debug] [2026-04-17T19:39:28.224Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-04-17T19:39:28.224Z] [unzip] deflating: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/index.html
+[debug] [2026-04-17T19:39:28.224Z] [unzip] Entry: client/android-chrome-192x192.png (compressed_size=2684 bytes, uncompressed_size=2684 bytes)
+[debug] [2026-04-17T19:39:28.224Z] [unzip] Processing entry: client/android-chrome-192x192.png
+[debug] [2026-04-17T19:39:28.224Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-04-17T19:39:28.224Z] [unzip] Writing file: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/android-chrome-192x192.png
+[debug] [2026-04-17T19:39:28.225Z] [unzip] Entry: client/apple-touch-icon.png (compressed_size=2123 bytes, uncompressed_size=2152 bytes)
+[debug] [2026-04-17T19:39:28.225Z] [unzip] Processing entry: client/apple-touch-icon.png
+[debug] [2026-04-17T19:39:28.225Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-04-17T19:39:28.225Z] [unzip] deflating: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/apple-touch-icon.png
+[debug] [2026-04-17T19:39:28.225Z] [unzip] Entry: client/android-chrome-512x512.png (compressed_size=5369 bytes, uncompressed_size=5411 bytes)
+[debug] [2026-04-17T19:39:28.225Z] [unzip] Processing entry: client/android-chrome-512x512.png
+[debug] [2026-04-17T19:39:28.225Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-04-17T19:39:28.225Z] [unzip] deflating: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/android-chrome-512x512.png
+[debug] [2026-04-17T19:39:28.226Z] [unzip] Entry: client/manifest.json (compressed_size=245 bytes, uncompressed_size=551 bytes)
+[debug] [2026-04-17T19:39:28.226Z] [unzip] Processing entry: client/manifest.json
+[debug] [2026-04-17T19:39:28.226Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-04-17T19:39:28.226Z] [unzip] deflating: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/manifest.json
+[debug] [2026-04-17T19:39:28.226Z] [unzip] Entry: client/robots.txt (compressed_size=26 bytes, uncompressed_size=26 bytes)
+[debug] [2026-04-17T19:39:28.226Z] [unzip] Processing entry: client/robots.txt
+[debug] [2026-04-17T19:39:28.226Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-04-17T19:39:28.226Z] [unzip] Writing file: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/robots.txt
+[debug] [2026-04-17T19:39:28.227Z] [unzip] Entry: client/mstile-150x150.png (compressed_size=2034 bytes, uncompressed_size=2034 bytes)
+[debug] [2026-04-17T19:39:28.227Z] [unzip] Processing entry: client/mstile-150x150.png
+[debug] [2026-04-17T19:39:28.227Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-04-17T19:39:28.227Z] [unzip] Writing file: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/mstile-150x150.png
+[debug] [2026-04-17T19:39:28.227Z] [unzip] Entry: client/assets/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2026-04-17T19:39:28.227Z] [unzip] Processing entry: client/assets/
+[debug] [2026-04-17T19:39:28.227Z] [unzip] mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/
+[debug] [2026-04-17T19:39:28.227Z] [unzip] Entry: client/assets/index-BX-A56oj.js (compressed_size=582089 bytes, uncompressed_size=2092775 bytes)
+[debug] [2026-04-17T19:39:28.227Z] [unzip] Processing entry: client/assets/index-BX-A56oj.js
+[debug] [2026-04-17T19:39:28.227Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets
+[debug] [2026-04-17T19:39:28.227Z] [unzip] deflating: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/index-BX-A56oj.js
+[debug] [2026-04-17T19:39:28.232Z] [unzip] Entry: client/assets/index-CjB9C900.css (compressed_size=35979 bytes, uncompressed_size=298654 bytes)
+[debug] [2026-04-17T19:39:28.232Z] [unzip] Processing entry: client/assets/index-CjB9C900.css
+[debug] [2026-04-17T19:39:28.232Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets
+[debug] [2026-04-17T19:39:28.232Z] [unzip] deflating: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/index-CjB9C900.css
+[debug] [2026-04-17T19:39:28.233Z] [unzip] Entry: client/assets/index-BX-A56oj.js.map (compressed_size=2362482 bytes, uncompressed_size=10036679 bytes)
+[debug] [2026-04-17T19:39:28.233Z] [unzip] Processing entry: client/assets/index-BX-A56oj.js.map
+[debug] [2026-04-17T19:39:28.233Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets
+[debug] [2026-04-17T19:39:28.233Z] [unzip] deflating: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/index-BX-A56oj.js.map
+[debug] [2026-04-17T19:39:28.260Z] [unzip] Entry: client/assets/extensions/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2026-04-17T19:39:28.260Z] [unzip] Processing entry: client/assets/extensions/
+[debug] [2026-04-17T19:39:28.260Z] [unzip] mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/extensions/
+[debug] [2026-04-17T19:39:28.260Z] [unzip] Entry: client/assets/extensions/default-extension.png (compressed_size=1646 bytes, uncompressed_size=1657 bytes)
+[debug] [2026-04-17T19:39:28.261Z] [unzip] Processing entry: client/assets/extensions/default-extension.png
+[debug] [2026-04-17T19:39:28.261Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/extensions
+[debug] [2026-04-17T19:39:28.261Z] [unzip] deflating: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/extensions/default-extension.png
+[debug] [2026-04-17T19:39:28.261Z] [unzip] Entry: client/assets/img/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2026-04-17T19:39:28.261Z] [unzip] Processing entry: client/assets/img/
+[debug] [2026-04-17T19:39:28.261Z] [unzip] mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/img/
+[debug] [2026-04-17T19:39:28.261Z] [unzip] Entry: client/assets/img/database.png (compressed_size=29449 bytes, uncompressed_size=29988 bytes)
+[debug] [2026-04-17T19:39:28.261Z] [unzip] Processing entry: client/assets/img/database.png
+[debug] [2026-04-17T19:39:28.261Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/img
+[debug] [2026-04-17T19:39:28.261Z] [unzip] deflating: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/img/database.png
+[debug] [2026-04-17T19:39:28.263Z] [unzip] Entry: client/assets/provider-icons/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2026-04-17T19:39:28.263Z] [unzip] Processing entry: client/assets/provider-icons/
+[debug] [2026-04-17T19:39:28.263Z] [unzip] mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/
+[debug] [2026-04-17T19:39:28.263Z] [unzip] Entry: client/assets/provider-icons/auth_service_saml.svg (compressed_size=575 bytes, uncompressed_size=1226 bytes)
+[debug] [2026-04-17T19:39:28.263Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_saml.svg
+[debug] [2026-04-17T19:39:28.263Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-04-17T19:39:28.263Z] [unzip] deflating: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_saml.svg
+[debug] [2026-04-17T19:39:28.263Z] [unzip] Entry: client/assets/provider-icons/auth_service_phone.svg (compressed_size=261 bytes, uncompressed_size=414 bytes)
+[debug] [2026-04-17T19:39:28.263Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_phone.svg
+[debug] [2026-04-17T19:39:28.263Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-04-17T19:39:28.263Z] [unzip] deflating: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_phone.svg
+[debug] [2026-04-17T19:39:28.264Z] [unzip] Entry: client/assets/provider-icons/auth_service_facebook.svg (compressed_size=289 bytes, uncompressed_size=457 bytes)
+[debug] [2026-04-17T19:39:28.264Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_facebook.svg
+[debug] [2026-04-17T19:39:28.264Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-04-17T19:39:28.264Z] [unzip] deflating: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_facebook.svg
+[debug] [2026-04-17T19:39:28.264Z] [unzip] Entry: client/assets/provider-icons/auth_service_game_center.svg (compressed_size=991 bytes, uncompressed_size=3921 bytes)
+[debug] [2026-04-17T19:39:28.264Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_game_center.svg
+[debug] [2026-04-17T19:39:28.264Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-04-17T19:39:28.264Z] [unzip] deflating: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_game_center.svg
+[debug] [2026-04-17T19:39:28.264Z] [unzip] Entry: client/assets/provider-icons/auth_service_apple.svg (compressed_size=230 bytes, uncompressed_size=334 bytes)
+[debug] [2026-04-17T19:39:28.264Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_apple.svg
+[debug] [2026-04-17T19:39:28.264Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-04-17T19:39:28.264Z] [unzip] deflating: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_apple.svg
+[debug] [2026-04-17T19:39:28.264Z] [unzip] Entry: client/assets/provider-icons/auth_service_github.svg (compressed_size=466 bytes, uncompressed_size=838 bytes)
+[debug] [2026-04-17T19:39:28.264Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_github.svg
+[debug] [2026-04-17T19:39:28.264Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-04-17T19:39:28.265Z] [unzip] deflating: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_github.svg
+[debug] [2026-04-17T19:39:28.265Z] [unzip] Entry: client/assets/provider-icons/auth_service_mslive.svg (compressed_size=203 bytes, uncompressed_size=378 bytes)
+[debug] [2026-04-17T19:39:28.265Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_mslive.svg
+[debug] [2026-04-17T19:39:28.265Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-04-17T19:39:28.265Z] [unzip] deflating: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_mslive.svg
+[debug] [2026-04-17T19:39:28.265Z] [unzip] Entry: client/assets/provider-icons/auth_service_yahoo.svg (compressed_size=577 bytes, uncompressed_size=1182 bytes)
+[debug] [2026-04-17T19:39:28.265Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_yahoo.svg
+[debug] [2026-04-17T19:39:28.265Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-04-17T19:39:28.265Z] [unzip] deflating: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_yahoo.svg
+[debug] [2026-04-17T19:39:28.265Z] [unzip] Entry: client/assets/provider-icons/auth_service_twitter.svg (compressed_size=444 bytes, uncompressed_size=751 bytes)
+[debug] [2026-04-17T19:39:28.265Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_twitter.svg
+[debug] [2026-04-17T19:39:28.265Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-04-17T19:39:28.265Z] [unzip] deflating: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_twitter.svg
+[debug] [2026-04-17T19:39:28.265Z] [unzip] Entry: client/assets/provider-icons/auth_service_play_games.svg (compressed_size=565 bytes, uncompressed_size=1173 bytes)
+[debug] [2026-04-17T19:39:28.266Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_play_games.svg
+[debug] [2026-04-17T19:39:28.266Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-04-17T19:39:28.266Z] [unzip] deflating: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_play_games.svg
+[debug] [2026-04-17T19:39:28.266Z] [unzip] Entry: client/assets/provider-icons/auth_service_email.svg (compressed_size=228 bytes, uncompressed_size=326 bytes)
+[debug] [2026-04-17T19:39:28.266Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_email.svg
+[debug] [2026-04-17T19:39:28.266Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-04-17T19:39:28.266Z] [unzip] deflating: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_email.svg
+[debug] [2026-04-17T19:39:28.266Z] [unzip] Entry: client/assets/provider-icons/auth_service_google.svg (compressed_size=409 bytes, uncompressed_size=720 bytes)
+[debug] [2026-04-17T19:39:28.266Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_google.svg
+[debug] [2026-04-17T19:39:28.266Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-04-17T19:39:28.266Z] [unzip] deflating: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_google.svg
+[debug] [2026-04-17T19:39:28.266Z] [unzip] Entry: client/assets/provider-icons/auth_service_oidc.svg (compressed_size=414 bytes, uncompressed_size=858 bytes)
+[debug] [2026-04-17T19:39:28.266Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_oidc.svg
+[debug] [2026-04-17T19:39:28.266Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-04-17T19:39:28.266Z] [unzip] deflating: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_oidc.svg
+[debug] [2026-04-17T19:39:28.267Z] [unzip] Entry: client/browserconfig.xml (compressed_size=491 bytes, uncompressed_size=822 bytes)
+[debug] [2026-04-17T19:39:28.267Z] [unzip] Processing entry: client/browserconfig.xml
+[debug] [2026-04-17T19:39:28.267Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-04-17T19:39:28.267Z] [unzip] deflating: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/browserconfig.xml
+[debug] [2026-04-17T19:39:28.267Z] [unzip] Entry: client/favicon-32x32.png (compressed_size=475 bytes, uncompressed_size=475 bytes)
+[debug] [2026-04-17T19:39:28.267Z] [unzip] Processing entry: client/favicon-32x32.png
+[debug] [2026-04-17T19:39:28.267Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-04-17T19:39:28.267Z] [unzip] Writing file: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/client/favicon-32x32.png
+[debug] [2026-04-17T19:39:28.267Z] [unzip] Entry: server/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2026-04-17T19:39:28.267Z] [unzip] Processing entry: server/
+[debug] [2026-04-17T19:39:28.267Z] [unzip] mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/server/
+[debug] [2026-04-17T19:39:28.267Z] [unzip] Entry: server/server.mjs.map (compressed_size=217845 bytes, uncompressed_size=944978 bytes)
+[debug] [2026-04-17T19:39:28.267Z] [unzip] Processing entry: server/server.mjs.map
+[debug] [2026-04-17T19:39:28.267Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/server
+[debug] [2026-04-17T19:39:28.267Z] [unzip] deflating: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/server/server.mjs.map
+[debug] [2026-04-17T19:39:28.269Z] [unzip] Entry: server/server.mjs (compressed_size=276407 bytes, uncompressed_size=933701 bytes)
+[debug] [2026-04-17T19:39:28.269Z] [unzip] Processing entry: server/server.mjs
+[debug] [2026-04-17T19:39:28.269Z] [unzip] else mkdir: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/server
+[debug] [2026-04-17T19:39:28.269Z] [unzip] deflating: /Users/brunotriaire/.cache/firebase/emulators/ui-v1.15.0/server/server.mjs
+[info] i  functions: Watching "/Users/brunotriaire/Documents/pdf-chat-app/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/brunotriaire/Documents/pdf-chat-app/functions\" for Cloud Functions..."}}
+[debug] [2026-04-17T19:39:28.273Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-04-17T19:39:29.379Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for PDF Chat App",
+  "type": "module",
+  "engines": {
+    "node": "20"
+  },
+  "main": "index.js",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-functions": "^6.4.0",
+    "firebase-admin": "^13.0.0",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {}
+}
+[debug] [2026-04-17T19:39:29.379Z] Building nodejs source
+[debug] [2026-04-17T19:39:29.379Z] Failed to find version of module node: reached end of search path /Users/brunotriaire/Documents/pdf-chat-app/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "20" doesn't match your global version "25". Using node@25 from host. 
+[debug] [2026-04-17T19:39:29.380Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-04-17T19:39:29.384Z] Found firebase-functions binary at '/Users/brunotriaire/Documents/pdf-chat-app/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8681
+
+[debug] [2026-04-17T19:39:30.081Z] Got response from /__/functions.yaml {"endpoints":{"chatWithMistral":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"chatWithMistral"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: chatWithMistral. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: chatWithMistral."}}
+[info] ✔  functions[us-central1-chatWithMistral]: http function initialized (http://127.0.0.1:5001/auradoc-f869a/us-central1/chatWithMistral). {"metadata":{"emulator":{"name":"functions"},"message":"http function initialized (http://127.0.0.1:5001/auradoc-f869a/us-central1/chatWithMistral)."}}
+[debug] [2026-04-17T19:39:34.117Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: . If you are not running the Firebase SQL Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2026-04-17T19:39:45.955Z] Functions emulator received unknown request at path /
+[debug] [2026-04-17T19:41:33.371Z] [work-queue] {"queuedWork":["/auradoc-f869a/us-central1/chatWithMistral-2026-04-17T19:41:33.369Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2026-04-17T19:41:33.372Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/auradoc-f869a/us-central1/chatWithMistral-2026-04-17T19:41:33.369Z"],"workRunningCount":1}
+[debug] [2026-04-17T19:41:33.372Z] Accepted request POST /auradoc-f869a/us-central1/chatWithMistral --> us-central1-chatWithMistral
+[debug] [2026-04-17T19:41:33.372Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2026-04-17T19:41:33.376Z] [functions] Got req.url=/auradoc-f869a/us-central1/chatWithMistral, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/auradoc-f869a/us-central1/chatWithMistral, mapping to path=/"}}
+[debug] [2026-04-17T19:41:33.384Z] [worker-pool] addWorker(us-central1-chatWithMistral) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-chatWithMistral)"}}
+[debug] [2026-04-17T19:41:33.384Z] [worker-pool] Adding worker with key us-central1-chatWithMistral, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-chatWithMistral, total=1"}}
+[debug] [2026-04-17T19:41:34.207Z] [runtime-status] [41823] Resolved module firebase-admin {"declared":true,"installed":true,"version":"13.8.0","resolution":"/Users/brunotriaire/Documents/pdf-chat-app/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":"[runtime-status] [41823] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"13.8.0\",\"resolution\":\"/Users/brunotriaire/Documents/pdf-chat-app/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2026-04-17T19:41:34.207Z] [runtime-status] [41823] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.6.0","resolution":"/Users/brunotriaire/Documents/pdf-chat-app/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":"[runtime-status] [41823] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"/Users/brunotriaire/Documents/pdf-chat-app/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2026-04-17T19:41:34.207Z] [runtime-status] [41823] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":"[runtime-status] [41823] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2026-04-17T19:41:34.208Z] [runtime-status] [41823] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.6.0","resolution":"/Users/brunotriaire/Documents/pdf-chat-app/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":"[runtime-status] [41823] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"/Users/brunotriaire/Documents/pdf-chat-app/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2026-04-17T19:41:34.324Z] [runtime-status] [41823] Resolved module firebase-admin {"declared":true,"installed":true,"version":"13.8.0","resolution":"/Users/brunotriaire/Documents/pdf-chat-app/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":"[runtime-status] [41823] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"13.8.0\",\"resolution\":\"/Users/brunotriaire/Documents/pdf-chat-app/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2026-04-17T19:41:34.325Z] [runtime-status] [41823] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.6.0","resolution":"/Users/brunotriaire/Documents/pdf-chat-app/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":"[runtime-status] [41823] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"/Users/brunotriaire/Documents/pdf-chat-app/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2026-04-17T19:41:34.404Z] [runtime-status] [41823] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"13.8.0","resolution":"/Users/brunotriaire/Documents/pdf-chat-app/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":"[runtime-status] [41823] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"13.8.0\",\"resolution\":\"/Users/brunotriaire/Documents/pdf-chat-app/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2026-04-17T19:41:34.419Z] [runtime-status] [41823] Functions runtime initialized. {"cwd":"/Users/brunotriaire/Documents/pdf-chat-app/functions","node_version":"25.8.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":"[runtime-status] [41823] Functions runtime initialized. {\"cwd\":\"/Users/brunotriaire/Documents/pdf-chat-app/functions\",\"node_version\":\"25.8.0\"}"}}
+[debug] [2026-04-17T19:41:34.419Z] [runtime-status] [41823] Listening to port: /var/folders/tv/1jx52jjj72326lrmw8nz0k5m0000gn/T/fire_emu_1b9b0e06a5443078.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":"[runtime-status] [41823] Listening to port: /var/folders/tv/1jx52jjj72326lrmw8nz0k5m0000gn/T/fire_emu_1b9b0e06a5443078.sock"}}
+[debug] [2026-04-17T19:41:34.507Z] [worker-us-central1-chatWithMistral-f563a1ef-e04f-492f-9432-69337cb77c15]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":"[worker-us-central1-chatWithMistral-f563a1ef-e04f-492f-9432-69337cb77c15]: IDLE"}}
+[debug] [2026-04-17T19:41:34.507Z] [worker-pool] submitRequest(triggerId=us-central1-chatWithMistral) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-chatWithMistral)"}}
+[info] i  functions: Beginning execution of "us-central1-chatWithMistral" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":"Beginning execution of \"us-central1-chatWithMistral\""}}
+[debug] [2026-04-17T19:41:34.508Z] [worker-us-central1-chatWithMistral-f563a1ef-e04f-492f-9432-69337cb77c15]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":"[worker-us-central1-chatWithMistral-f563a1ef-e04f-492f-9432-69337cb77c15]: BUSY"}}
+[info] >  {"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"} {"user":{"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"},"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":">  {\"verifications\":{\"app\":\"MISSING\",\"auth\":\"MISSING\"},\"logging.googleapis.com/labels\":{\"firebase-log-type\":\"callable-request-verification\"},\"severity\":\"DEBUG\",\"message\":\"Callable request verification passed\"}"}}
+[info] >  Calling Mistral API from Cloud Function... {"user":"Calling Mistral API from Cloud Function...","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":">  Calling Mistral API from Cloud Function..."}}
+[warn] ⚠  External network resource requested!
+   - URL: "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2"
+ - Be careful, this may be a production service. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":"External network resource requested!\n   - URL: \"https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2\"\n - Be careful, this may be a production service."}}
+[info] >  Mistral API response status: 404 {"user":"Mistral API response status: 404","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":">  Mistral API response status: 404"}}
+[info] >  Mistral API error: <!DOCTYPE html> {"user":"Mistral API error: <!DOCTYPE html>","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":">  Mistral API error: <!DOCTYPE html>"}}
+[info] >  <html lang="en"> {"user":"<html lang=\"en\">","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":">  <html lang=\"en\">"}}
+[info] >  <head> {"user":"<head>","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":">  <head>"}}
+[info] >  <meta charset="utf-8"> {"user":"<meta charset=\"utf-8\">","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":">  <meta charset=\"utf-8\">"}}
+[info] >  <title>Error</title> {"user":"<title>Error</title>","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":">  <title>Error</title>"}}
+[info] >  </head> {"user":"</head>","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":">  </head>"}}
+[info] >  <body> {"user":"<body>","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":">  <body>"}}
+[info] >  <pre>Cannot POST /models/mistralai/Mistral-7B-Instruct-v0.2</pre> {"user":"<pre>Cannot POST /models/mistralai/Mistral-7B-Instruct-v0.2</pre>","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":">  <pre>Cannot POST /models/mistralai/Mistral-7B-Instruct-v0.2</pre>"}}
+[info] >  </body> {"user":"</body>","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":">  </body>"}}
+[info] >  </html> {"user":"</html>","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":">  </html>"}}
+[info] >   {"user":"","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":">  "}}
+[info] >  Error in chatWithMistral: API error: 404 - <!DOCTYPE html> {"user":"Error in chatWithMistral: API error: 404 - <!DOCTYPE html>","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":">  Error in chatWithMistral: API error: 404 - <!DOCTYPE html>"}}
+[info] >  <html lang="en"> {"user":"<html lang=\"en\">","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":">  <html lang=\"en\">"}}
+[info] >  <head> {"user":"<head>","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":">  <head>"}}
+[info] >  <meta charset="utf-8"> {"user":"<meta charset=\"utf-8\">","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":">  <meta charset=\"utf-8\">"}}
+[info] >  <title>Error</title> {"user":"<title>Error</title>","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":">  <title>Error</title>"}}
+[info] >  </head> {"user":"</head>","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":">  </head>"}}
+[info] >  <body> {"user":"<body>","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":">  <body>"}}
+[info] >  <pre>Cannot POST /models/mistralai/Mistral-7B-Instruct-v0.2</pre> {"user":"<pre>Cannot POST /models/mistralai/Mistral-7B-Instruct-v0.2</pre>","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":">  <pre>Cannot POST /models/mistralai/Mistral-7B-Instruct-v0.2</pre>"}}
+[info] >  </body> {"user":"</body>","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":">  </body>"}}
+[info] >  </html> {"user":"</html>","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":">  </html>"}}
+[info] >   {"user":"","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":">  "}}
+[debug] [2026-04-17T19:41:34.792Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-chatWithMistral" in 284.366417ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":"Finished \"us-central1-chatWithMistral\" in 284.366417ms"}}
+[debug] [2026-04-17T19:41:34.792Z] [worker-us-central1-chatWithMistral-f563a1ef-e04f-492f-9432-69337cb77c15]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":"[worker-us-central1-chatWithMistral-f563a1ef-e04f-492f-9432-69337cb77c15]: IDLE"}}
+[debug] [2026-04-17T19:41:34.792Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2026-04-17T19:41:34.792Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-chatWithMistral"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2026-04-17T19:41:34.792Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
