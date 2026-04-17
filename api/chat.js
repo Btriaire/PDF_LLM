@@ -16,7 +16,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const togetherApiUrl = 'https://api.together.xyz/inference';
+    const togetherApiUrl = 'https://api.together.ai/inference';
     const prompt = `${systemPrompt}\n\nUser: ${userMessage}\n\nAssistant:`;
 
     console.log('Calling Together AI Mistral API...');
