@@ -16,8 +16,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const togetherApiUrl = 'https://api.together.ai/inference';
-    const prompt = `${systemPrompt}\n\nUser: ${userMessage}\n\nAssistant:`;
+    const togetherApiUrl = 'https://api.together.ai/v1/chat/completions';
 
     console.log('Calling Together AI Mistral API...');
 
@@ -29,7 +28,10 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         model: 'mistralai/Mistral-7B-Instruct-v0.1',
-        prompt: prompt,
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: userMessage }
+        ],
         max_tokens: 256,
         temperature: 0.7,
         top_p: 0.95,
@@ -50,8 +52,8 @@ export default async function handler(req, res) {
     const result = await response.json();
     console.log('Together AI result:', result);
 
-    const responseText = result.output?.[0] || '';
-    const finalMessage = responseText.replace(prompt, '').trim();
+    const responseText = result.choices?.[0]?.message?.content || '';
+    const finalMessage = responseText.trim();
 
     return res.status(200).json({
       success: true,
