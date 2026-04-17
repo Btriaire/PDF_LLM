@@ -1,3 +1,59 @@
+const STOP_WORDS = new Set([
+  'the','a','an','is','are','was','were','be','been','have','has','had','do','does','did',
+  'will','would','could','should','may','might','i','you','he','she','it','we','they',
+  'what','which','who','when','where','why','how','this','that','and','or','but','in',
+  'on','at','to','for','of','with','by','from','as','into',
+  'le','la','les','de','du','des','un','une','et','ou','en','dans','sur','pour','par',
+  'avec','est','sont','que','qui','quoi','quel','quelle','ce','se','sa','son','ses','me',
+  'mon','ma','mes','je','tu','il','elle','nous','vous','ils','elles','pas','ne',
+]);
+
+function findRelevantChunks(pdfContent, question, maxChunks = 5) {
+  const CHUNK_WORDS = 300;
+  const OVERLAP_WORDS = 50;
+
+  const words = pdfContent.split(/\s+/);
+
+  // If small enough, return as-is
+  if (words.length <= CHUNK_WORDS * maxChunks) return pdfContent;
+
+  // Build chunks with overlap
+  const chunks = [];
+  for (let i = 0; i < words.length; i += CHUNK_WORDS - OVERLAP_WORDS) {
+    const chunk = words.slice(i, i + CHUNK_WORDS).join(' ');
+    if (chunk.trim()) chunks.push({ text: chunk, index: chunks.length });
+  }
+
+  // Extract keywords from question
+  const keywords = question.toLowerCase()
+    .replace(/[^a-z0-9àâçéèêëîïôùûü\s]/g, ' ')
+    .split(/\s+/)
+    .filter(w => w.length > 2 && !STOP_WORDS.has(w));
+
+  if (keywords.length === 0) {
+    // No keywords — return first maxChunks
+    return chunks.slice(0, maxChunks).map(c => c.text).join('\n\n---\n\n');
+  }
+
+  // Score each chunk by keyword frequency
+  const scored = chunks.map(c => {
+    const lower = c.text.toLowerCase();
+    const score = keywords.reduce((sum, kw) => {
+      const matches = (lower.match(new RegExp(kw, 'g')) || []).length;
+      return sum + matches;
+    }, 0);
+    return { ...c, score };
+  });
+
+  // Keep top chunks, restore original order
+  const top = scored
+    .sort((a, b) => b.score - a.score)
+    .slice(0, maxChunks)
+    .sort((a, b) => a.index - b.index);
+
+  return top.map(c => c.text).join('\n\n---\n\n');
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -18,16 +74,10 @@ export default async function handler(req, res) {
   try {
     console.log('Calling Groq Llama API with PDF context...');
 
-    // Groq Llama 3.3 has a 128k token context window (~500k chars), but we limit
-    // to 80k chars to leave room for the conversation and response.
-    const MAX_PDF_CHARS = 80000;
-    const truncatedContent = pdfContent && pdfContent.length > MAX_PDF_CHARS
-      ? pdfContent.slice(0, MAX_PDF_CHARS) + '\n\n[Document truncated due to length...]'
-      : pdfContent;
-
     let finalSystemPrompt = systemPrompt || 'You are a helpful assistant.';
-    if (truncatedContent) {
-      finalSystemPrompt += `\n\nDocument Content:\n${truncatedContent}`;
+    if (pdfContent) {
+      const relevantContent = findRelevantChunks(pdfContent, userMessage);
+      finalSystemPrompt += `\n\nDocument Content (most relevant excerpts):\n${relevantContent}`;
     }
 
     const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
