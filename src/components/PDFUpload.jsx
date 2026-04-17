@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { extractTextFromPDF } from '../utils/pdfExtractor';
 
 export const PDFUpload = ({ userId, onUpload }) => {
   const [file, setFile] = useState(null);
@@ -12,6 +13,10 @@ export const PDFUpload = ({ userId, onUpload }) => {
     setLoading(true);
     setError(null);
     try {
+      console.log('Extracting text from PDF...');
+      const pdfText = await extractTextFromPDF(file);
+      console.log(`Extracted ${pdfText.length} characters from PDF`);
+
       const newPDF = {
         id: Date.now().toString(),
         userId,
@@ -20,7 +25,7 @@ export const PDFUpload = ({ userId, onUpload }) => {
         fileSize: file.size,
         uploadedAt: new Date(),
         storagePath: `pdfs/${userId}/${Date.now()}-${file.name}`,
-        text: `PDF: ${file.name} - Ready for analysis`,
+        text: pdfText,
       };
       onUpload(newPDF);
       setFile(null);

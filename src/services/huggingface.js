@@ -1,12 +1,10 @@
-export const callMistralAPI = async (messages, systemPrompt) => {
+export const callMistralAPI = async (userMessage, systemPrompt, pdfContent = '') => {
   try {
-    const userMessage = messages.find(m => m.role === 'user')?.content || '';
-
     console.log('Calling Vercel API endpoint...');
 
     const apiUrl = import.meta.env.DEV
-      ? 'http://localhost:3000/api/chat'  // Local dev server
-      : '/api/chat';  // Production (Vercel)
+      ? 'http://localhost:3000/api/chat'
+      : '/api/chat';
 
     const response = await fetch(apiUrl, {
       method: 'POST',
@@ -16,6 +14,7 @@ export const callMistralAPI = async (messages, systemPrompt) => {
       body: JSON.stringify({
         userMessage,
         systemPrompt,
+        pdfContent,
       }),
     });
 

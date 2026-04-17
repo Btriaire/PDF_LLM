@@ -17,17 +17,13 @@ export const useChat = (userId, pdfId) => {
       const userMsg = { id: Date.now(), role: 'user', content: userMessage };
       setMessages(prev => [...prev, userMsg]);
 
-      console.log('Calling Mistral API...');
+      console.log('Calling Groq API with PDF context...');
       const systemPrompt = `Tu es un assistant intelligent qui répond à des questions sur des documents PDF.
-Utilise le contexte fourni pour répondre précisément et concisément.`;
+Utilise le contexte du document fourni pour répondre précisément et concisément.
+Sois utile et clair dans tes réponses.`;
 
-      const userMessages = [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: userMessage }
-      ];
-
-      const aiResponse = await callMistralAPI(userMessages, '');
-      console.log('Got Mistral response:', aiResponse);
+      const aiResponse = await callMistralAPI(userMessage, systemPrompt, pdfContent);
+      console.log('Got Groq response:', aiResponse);
 
       // Add AI response to local state
       const assistantMsg = { id: Date.now() + 1, role: 'assistant', content: aiResponse };

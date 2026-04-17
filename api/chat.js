@@ -3,7 +3,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { userMessage, systemPrompt } = req.body;
+  const { userMessage, systemPrompt, pdfContent } = req.body;
 
   if (!userMessage) {
     return res.status(400).json({ error: 'userMessage is required' });
@@ -16,7 +16,12 @@ export default async function handler(req, res) {
   }
 
   try {
-    console.log('Calling Groq Mistral API...');
+    console.log('Calling Groq Llama API with PDF context...');
+
+    let finalSystemPrompt = systemPrompt || 'You are a helpful assistant.';
+    if (pdfContent) {
+      finalSystemPrompt += `\n\nDocument Content:\n${pdfContent}`;
+    }
 
     const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',
@@ -29,7 +34,7 @@ export default async function handler(req, res) {
         messages: [
           {
             role: 'system',
-            content: systemPrompt || 'You are a helpful assistant.'
+            content: finalSystemPrompt
           },
           {
             role: 'user',
@@ -37,7 +42,7 @@ export default async function handler(req, res) {
           }
         ],
         temperature: 0.7,
-        max_tokens: 1024
+        max_tokens: 2048
       })
     });
 
