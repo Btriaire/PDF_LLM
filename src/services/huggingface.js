@@ -12,12 +12,17 @@ export const callMistralAPI = async (userMessage, systemPrompt, pdfContent = '')
       ? 'http://localhost:3000/api/chat'
       : '/api/chat';
 
+    const pdfContentToSend = pdfContent || '';
     const requestBody = {
       userMessage,
       systemPrompt,
-      pdfContent,
+      pdfContent: pdfContentToSend,
     };
-    console.log('Sending request body with pdfContent length:', requestBody.pdfContent.length);
+    console.log('Sending request body:', {
+      pdfContentLength: pdfContentToSend.length,
+      pdfContentType: typeof pdfContentToSend,
+      isPdfContentEmpty: pdfContentToSend.length === 0,
+    });
 
     const response = await fetch(apiUrl, {
       method: 'POST',

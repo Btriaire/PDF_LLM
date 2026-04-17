@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { callMistralAPI } from '../services/huggingface';
 
 export const useChat = (userId, pdfId) => {
@@ -6,6 +6,10 @@ export const useChat = (userId, pdfId) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [pdfContent, setPdfContent] = useState('');
+
+  useEffect(() => {
+    console.log('useChat: pdfContent updated, length:', pdfContent.length);
+  }, [pdfContent]);
 
   const sendMessage = async (userMessage) => {
     if (!userMessage.trim()) return;
