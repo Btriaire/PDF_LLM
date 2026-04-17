@@ -25,7 +25,7 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'mistral-7b-instruct-v0.1',
+        model: 'mistral-8x7b-32768',
         messages: [
           {
             role: 'system',
