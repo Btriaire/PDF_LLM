@@ -16,44 +16,43 @@ export default async function handler(req, res) {
   }
 
   try {
-    const togetherApiUrl = 'https://api.together.ai/v1/chat/completions';
+    // Using Ollama running locally on port 11434
+    // Make sure Ollama is running: ollama run mistral
+    const ollamaUrl = process.env.OLLAMA_URL || 'http://localhost:11434/api/generate';
 
-    console.log('Calling Together AI Mistral API...');
+    const prompt = `${systemPrompt}\n\nUser: ${userMessage}\n\nAssistant:`;
 
-    const response = await fetch(togetherApiUrl, {
+    console.log('Calling Ollama Mistral API...');
+
+    const response = await fetch(ollamaUrl, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'mistralai/Mistral-7B-Instruct-v0.1',
-        messages: [
-          { role: 'system', content: systemPrompt },
-          { role: 'user', content: userMessage }
-        ],
-        max_tokens: 256,
+        model: 'mistral',
+        prompt: prompt,
+        stream: false,
         temperature: 0.7,
-        top_p: 0.95,
       })
     });
 
-    console.log('Together AI response status:', response.status);
+    console.log('Ollama response status:', response.status);
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error('Together AI error:', errorText);
+      console.error('Ollama error:', errorText);
       return res.status(response.status).json({
-        error: `API error: ${response.status}`,
+        error: `Ollama API error: ${response.status}. Make sure Ollama is running: ollama run mistral`,
         details: errorText
       });
     }
 
     const result = await response.json();
-    console.log('Together AI result:', result);
+    console.log('Ollama result:', result);
 
-    const responseText = result.choices?.[0]?.message?.content || '';
-    const finalMessage = responseText.trim();
+    const responseText = result.response || '';
+    const finalMessage = responseText.replace(prompt, '').trim();
 
     return res.status(200).json({
       success: true,
