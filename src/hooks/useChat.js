@@ -18,6 +18,8 @@ export const useChat = (userId, pdfId) => {
       setMessages(prev => [...prev, userMsg]);
 
       console.log('Calling Groq API with PDF context...');
+      console.log('PDF Content length:', pdfContent.length, 'chars');
+      console.log('PDF Content preview:', pdfContent.substring(0, 200));
       const systemPrompt = `Tu es un assistant intelligent qui répond à des questions sur des documents PDF.
 Utilise le contexte du document fourni pour répondre précisément et concisément.
 Sois utile et clair dans tes réponses.`;

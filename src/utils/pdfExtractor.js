@@ -4,8 +4,10 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.j
 
 export const extractTextFromPDF = async (file) => {
   try {
+    console.log('Starting PDF extraction for file:', file.name);
     const arrayBuffer = await file.arrayBuffer();
     const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+    console.log('PDF loaded, total pages:', pdf.numPages);
     let fullText = '';
 
     for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
@@ -15,7 +17,9 @@ export const extractTextFromPDF = async (file) => {
       fullText += pageText + '\n';
     }
 
-    return fullText.trim();
+    const finalText = fullText.trim();
+    console.log('Extraction complete, total text length:', finalText.length);
+    return finalText;
   } catch (error) {
     console.error('Error extracting PDF text:', error);
     throw new Error('Failed to extract text from PDF');

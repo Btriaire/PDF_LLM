@@ -12,7 +12,12 @@ export const ChatInterface = ({ userId, pdf }) => {
 
   useEffect(() => {
     if (pdf?.text) {
+      console.log('ChatInterface received PDF text, length:', pdf.text.length);
+      console.log('First 300 chars:', pdf.text.substring(0, 300));
       setPdfText(pdf.text);
+    } else {
+      console.log('ChatInterface: No PDF text available');
+      setPdfText('');
     }
   }, [pdf]);
 

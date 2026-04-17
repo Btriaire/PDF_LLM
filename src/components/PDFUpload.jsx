@@ -16,6 +16,7 @@ export const PDFUpload = ({ userId, onUpload }) => {
       console.log('Extracting text from PDF...');
       const pdfText = await extractTextFromPDF(file);
       console.log(`Extracted ${pdfText.length} characters from PDF`);
+      console.log('First 300 chars:', pdfText.substring(0, 300));
 
       const newPDF = {
         id: Date.now().toString(),
@@ -27,6 +28,7 @@ export const PDFUpload = ({ userId, onUpload }) => {
         storagePath: `pdfs/${userId}/${Date.now()}-${file.name}`,
         text: pdfText,
       };
+      console.log('Calling onUpload with PDF containing', pdfText.length, 'characters');
       onUpload(newPDF);
       setFile(null);
       setTitle('');
