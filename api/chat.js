@@ -18,9 +18,16 @@ export default async function handler(req, res) {
   try {
     console.log('Calling Groq Llama API with PDF context...');
 
+    // Groq Llama 3.3 has a 128k token context window (~500k chars), but we limit
+    // to 80k chars to leave room for the conversation and response.
+    const MAX_PDF_CHARS = 80000;
+    const truncatedContent = pdfContent && pdfContent.length > MAX_PDF_CHARS
+      ? pdfContent.slice(0, MAX_PDF_CHARS) + '\n\n[Document truncated due to length...]'
+      : pdfContent;
+
     let finalSystemPrompt = systemPrompt || 'You are a helpful assistant.';
-    if (pdfContent) {
-      finalSystemPrompt += `\n\nDocument Content:\n${pdfContent}`;
+    if (truncatedContent) {
+      finalSystemPrompt += `\n\nDocument Content:\n${truncatedContent}`;
     }
 
     const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
