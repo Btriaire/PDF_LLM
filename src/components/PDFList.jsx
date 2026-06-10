@@ -21,11 +21,13 @@ export const PDFList = ({ pdfs = [], onSelectPDF, onDeletePDF }) => {
                 <p className="text-xs text-slate-400">{(pdf.fileSize / 1024).toFixed(2)} KB</p>
               </div>
               <button
+                aria-label={`Supprimer ${pdf.title}`}
+                title="Supprimer"
                 onClick={(e) => {
                   e.stopPropagation();
                   handleDelete(pdf.id);
                 }}
-                className="ml-2 px-2 py-1 text-red-400 hover:bg-red-500/20 rounded text-xs transition"
+                className="ml-2 px-2 py-1 text-red-400 hover:bg-red-500/20 rounded text-xs transition focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:outline-none"
               >
                 ×
               </button>
